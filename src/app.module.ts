@@ -7,6 +7,7 @@ import { validationSchema } from './config/validationSchema';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Users } from './users/entities/users.entitiy';
 import { SurveysModule } from './surveys/surveys.module';
+import { SurveysEntity } from './surveys/entities/surveys.entity';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { SurveysModule } from './surveys/surveys.module';
     username:process.env.DB_NAME,
     password:process.env.DB_PASSWORD,
     database:'test',
-    entities:[Users],
+    entities:[Users, SurveysEntity],
     synchronize:process.env.DB_SYNCHRONIZE === 'true'
   })],
   controllers: [AppController],
