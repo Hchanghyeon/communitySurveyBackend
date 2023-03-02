@@ -2,11 +2,10 @@ import { IsString, MaxLength, MinLength, Matches, IsEmail, IsDate, Length } from
 
 export class CreateSurveyDto {
     @IsString()
-    @MinLength(10)
-    @MaxLength(20)
-    readonly header:string; // 계정 이름
+    @MaxLength(60)
+    readonly header:string; // 제목
 
     @IsString()
     @MaxLength(60)
-    readonly contents: []; // 이메일 
+    readonly contents: string[]; // 콘텐츠
 }
